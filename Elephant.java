@@ -44,6 +44,31 @@ public class Elephant extends Actor
         // Initial elephant image
         setImage(idleRight[0]);
     }
+    
+    /**
+     * Animate the elephant 
+     */
+    int imageIndex = 0;
+    public void animateElephant()
+    {
+        if(animationTimer.millisElapsed() < 120)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        if(facing.equals("right"))
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;
+        }else 
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
+    }
+    
+    
     public void act()
     {    
     }
