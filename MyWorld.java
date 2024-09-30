@@ -15,12 +15,25 @@ public class MyWorld extends World
         scoreLabel= new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         
-        createApple();     
+        spawnFood();     
     }
     
+<<<<<<< Updated upstream
     public void increaseScore()
+=======
+    
+    public void act()
     {
-        score++;
+        List<Moveable> moveables = getObjects(Moveable.class);
+        for (Moveable m : moveables) {
+            m.move(0);
+        }
+    }
+    
+    public void increaseScore(int value)
+>>>>>>> Stashed changes
+    {
+        score += value;
         scoreLabel.setValue(score);
     }
     public void spawnFood()
