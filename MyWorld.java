@@ -32,12 +32,20 @@ public class MyWorld extends World
         score++;
         scoreLabel.setValue(score);
     }
-    public void createApple()
+    public void spawnFood()
     {
-        Apple apple = new Apple();
+        int rand = Greenfoot.getRandomNumber(2);
+        Food food;
+        if(rand == 0)
+        {
+            food = new Apple();
+        }
+        else
+        {
+            food = new Banana();
+        }
         int x = Greenfoot.getRandomNumber(600);
-        int y = 0;
-        addObject(apple, x, y);
+        addObject(food, x, 0);
     }
     
     public void gameOver()
