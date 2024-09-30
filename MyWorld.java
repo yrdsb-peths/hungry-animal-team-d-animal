@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 public class MyWorld extends World
 {
     public int score = 0;
@@ -15,12 +15,9 @@ public class MyWorld extends World
         scoreLabel= new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         
-        spawnFood();     
+        createApple();     
     }
     
-<<<<<<< Updated upstream
-    public void increaseScore()
-=======
     
     public void act()
     {
@@ -30,31 +27,27 @@ public class MyWorld extends World
         }
     }
     
-    public void increaseScore(int value)
->>>>>>> Stashed changes
+    public void increaseScore()
     {
-        score += value;
+        score++;
         scoreLabel.setValue(score);
     }
-    public void spawnFood()
+    public void createApple()
     {
-        int rand = Greenfoot.getRandomNumber(2);
-        Food food;
-        if(rand == 0)
-        {
-            food = new Apple();
-        }
-        else
-        {
-            food = new Banana();
-        }
+        Apple apple = new Apple();
         int x = Greenfoot.getRandomNumber(600);
-        addObject(food, x, 0);
+        int y = 0;
+        addObject(apple, x, y);
     }
     
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200); 
+    }
+    
+    public void moveMoveable(Moveable moveableObject, int distance)
+    {
+        moveableObject.move(distance);
     }
 }

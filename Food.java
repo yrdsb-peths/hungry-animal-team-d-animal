@@ -9,8 +9,5 @@ public abstract class Food extends Actor
         this.value = value; 
     }
     
-    public void act()
-    {
-        setLocation(getX(), getY() + value);
-    }
+    public abstract void move(int distance);
 }

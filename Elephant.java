@@ -100,16 +100,14 @@ public class Elephant extends Actor implements Moveable
      */
     public void eat()
     {
-        Actor actor = getOneIntersectingObject(Food.class);
-        if(actor != null)
+        if(isTouching(Apple.class))
         {
-            Food food = (Food) actor;
+            removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
+            world.createApple();
             // world.increaseScore();
             elephantSound.play();
-            getWorld().removeObject(food);
-            world.increaseScore(food.value);
-            world.spawnFood();
+            world.increaseScore();
         }
     }
 }
