@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 public class MyWorld extends World
 {
     public int score = 0;
@@ -16,6 +16,15 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
         
         createApple();     
+    }
+    
+    
+    public void act()
+    {
+        List<Moveable> moveables = getObjects(Moveable.class);
+        for (Moveable m : moveables) {
+            m.move(0);
+        }
     }
     
     public void increaseScore()
@@ -35,5 +44,10 @@ public class MyWorld extends World
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200); 
+    }
+    
+    public void moveMoveable(Moveable moveableObject, int distance)
+    {
+        moveableObject.move(distance);
     }
 }

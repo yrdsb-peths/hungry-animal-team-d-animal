@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Gloriana Zheng
  * @version Sep. 2024
  */
-public class Elephant extends Actor
+public class Elephant extends Actor implements Moveable
 {
     GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
     /**
@@ -69,6 +69,11 @@ public class Elephant extends Actor
         }
     }
     
+    // override
+    public void move(int distance)
+    {
+        super.move(distance);
+    }
     
     public void act()
     {
