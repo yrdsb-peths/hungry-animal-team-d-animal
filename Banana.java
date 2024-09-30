@@ -1,6 +1,6 @@
 
 
-public class Banana extends Food
+public class Banana extends Food implements Moveable
 {
     // instance variables - replace the example below with your own
     private int x;
@@ -22,5 +22,11 @@ public class Banana extends Food
             world.gameOver();
             world.removeObject(this);
         }
+    }
+    
+    // interface of moveable 
+    public void move(int distance)
+    {
+        setLocation(getX(), getY() + distance);
     }
 }
