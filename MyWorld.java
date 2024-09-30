@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 public class MyWorld extends World
 {
     public int score = 0;
@@ -18,9 +18,8 @@ public class MyWorld extends World
         spawnFood();     
     }
     
-<<<<<<< Updated upstream
-    public void increaseScore()
-=======
+    //public void increaseScore()
+
     
     public void act()
     {
@@ -31,7 +30,6 @@ public class MyWorld extends World
     }
     
     public void increaseScore(int value)
->>>>>>> Stashed changes
     {
         score += value;
         scoreLabel.setValue(score);
