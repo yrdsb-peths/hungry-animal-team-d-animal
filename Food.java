@@ -8,4 +8,6 @@ public abstract class Food extends Actor
     {
         this.value = value; 
     }
+    
+    public abstract void move(int distance);
 }
