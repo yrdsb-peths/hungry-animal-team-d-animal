@@ -13,4 +13,9 @@ public abstract class Food extends Actor
     {
         setLocation(getX(), getY() + value);
     }
+    
+    public void eaten()
+    {
+        System.out.println("Fruit is eaten! ");
+    }
 }
