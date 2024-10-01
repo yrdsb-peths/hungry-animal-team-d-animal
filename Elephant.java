@@ -106,6 +106,8 @@ public class Elephant extends Actor implements Moveable
             Food food = (Food) actor;
             MyWorld world = (MyWorld) getWorld();
             // world.increaseScore();
+            //call it properly
+            food.eaten();
             elephantSound.play();
             getWorld().removeObject(food);
             world.increaseScore(food.value);

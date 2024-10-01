@@ -35,4 +35,10 @@ public class Apple extends Food implements Moveable
     {
         setLocation(getX(), getY() + distance);
     }
+    
+    @Override
+    public void eaten()
+    {
+        System.out.println("This apple is eaten.");
+    }
 }
